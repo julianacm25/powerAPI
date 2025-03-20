@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-import requests  # Se você precisar fazer outra requisição para um banco de dados, por exemplo
+import requests  
 
 app = Flask(__name__)
 
@@ -10,8 +10,8 @@ def buscar_contrato():
     if not nome_cliente:
         return jsonify({"erro": "Nome não fornecido"}), 400
     
-    # Aqui você chama a API ou faz a lógica para buscar o contrato
-    contrato_url = f"https://api.contratos.com/{nome_cliente}.pdf"  # Exemplo
+   
+    contrato_url = f"https://api.contratos.com/{nome_cliente}.pdf"  
     
     return jsonify({"contrato_url": contrato_url})
 
